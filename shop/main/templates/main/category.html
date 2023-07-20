@@ -1,9 +1,33 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 {% block title %}
 Категории
 {% endblock %}
 
 {% block content %}
-Категории
-{% endblock %}
+<center>
+    <div class="features">
+        <h1>Орехи</h1>
+        <br>
+        <h3>интернет-магазин натуральных, полезных продуктов, которые созданы самой природой.</h3>
+    </div>
+</center>
+<center>
+    <br>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for el in data %}
+        <div class="col">
+            <div class="card h-100">
+                <img src=""
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ el.name }}</h5>
+                    <p class="card-text">{{ el.price }}</p>
+                </div>
+                <div class="card-footer">
+                    <small><a href="/product/{{el.id}}" class="btn btn-primary">На страницу товара</a></small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endblock %}

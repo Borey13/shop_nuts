@@ -1,0 +1,17 @@
+body {
+    background: #ffffff;
+}
+
+aside {
+    background: #E0FFFF;
+}
+
+main .features {
+    color: #000000;
+    margin-top:10px;
+    width: 80%;
+
+}
+
+main .features h1 {font-size: 50px;}
+

@@ -5,5 +5,20 @@
 {% endblock %}
 
 {% block content %}
-Продукты
+<div class="card mb-3" style="max-width: 2000px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h1 class="card-title">{{ product.name }}</h1>
+                <h2 class="card-text">{{ product.price }}</h2>
+                <h3 class="card-text">Белки: 12 г<br>Жиры: 42 г</h3>
+                <p class="card-text"><small><a href="category/{{c.id}}" class="btn btn-primary">В корзину</a></small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
