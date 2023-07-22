@@ -7,9 +7,8 @@
 {% block content %}
 <center>
     <div class="features">
-        <h1>Орехи</h1>
-        <br>
-        <h3>интернет-магазин натуральных, полезных продуктов, которые созданы самой природой.</h3>
+        <h1><b><i>{{ name }}</i></b></h1>
+        <h3><i>{{ discription }}</i></h3>
     </div>
 </center>
 <center>
@@ -18,8 +17,7 @@
         {% for el in data %}
         <div class="col">
             <div class="card h-100">
-                <img src=""
-                     class="card-img-top" alt="...">
+                <img src="{{ el.link_foto }}" class="card-img-top" alt="Image" height="300">
                 <div class="card-body">
                     <h5 class="card-title">{{ el.name }}</h5>
                     <p class="card-text">{{ el.price }}</p>

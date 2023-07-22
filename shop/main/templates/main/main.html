@@ -7,28 +7,30 @@
 {% block content %}
 <center>
     <div class="features">
-        <h1>Орехи</h1>
-        <br>
-        <h3>интернет-магазин натуральных, полезных продуктов, которые созданы самой природой.</h3>
+        <h1><b><i>Твой Орех</i></b></h1>
+        <h2><i>полезные и натуральные продукты по низким ценам</i></h2>
+        <h4>Наш магазин - это находка для каждого любителя вкусных и полезных продуктов. Нам удалось собрать в одном
+            месте все, что может Вас заинтересовать. Откажитесь от длительных поездок по магазинам своего города,
+            ведь теперь, можно сделать заказ продукции в пару кликов.</h4>
     </div>
 </center>
 <center>
     <br>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        {% for c in categories %}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for c in categories %}
         <div class="col">
             <div class="card h-100">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="{{ c.link_foto }}" class="card-img-top" alt="Image" height="300">
                 <div class="card-body">
-                    <h5 class="card-title">{{ c.name }}</h5>
-                    <p class="card-text">longer.</p>
+                    <h3 class="card-title">{{ c.name }}</h3>
                 </div>
                 <div class="card-footer">
                     <small>
-                        <a href="category/{{c.id}}" class="btn btn-primary">На страницу товара</a>
+                        <a href="category/{{c.id}}" class="btn btn-primary">Подробнее</a>
                     </small>
                 </div>
             </div>
         </div>
-        {% endfor %}
-        {% endblock %}
+
+    {% endfor %}
+{% endblock %}

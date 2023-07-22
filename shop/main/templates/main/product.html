@@ -8,17 +8,25 @@
 <div class="card mb-3" style="max-width: 2000px;">
     <div class="row g-0">
         <div class="col-md-4">
-            <img src="" class="img-fluid rounded-start" alt="...">
+            <img src="{{product.link_foto}}" class="img-fluid rounded-start" alt="...">
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h1 class="card-title">{{ product.name }}</h1>
-                <h2 class="card-text">{{ product.price }}</h2>
-                <h3 class="card-text">Белки: 12 г<br>Жиры: 42 г</h3>
+                <h1 class="card-title"><b>{{ product.name }}</b></h1>
+                <h2 class="card-text"><i>{{ product.price }}</i> рублей за 100 г</h2><br>
+                <h5 class="card-text"><u>Общие характеристики:</u><br>Каллорийность: {{ calories.calories }} кКал<br>Белки:
+                    {{ calories.proteins }} г<br>Жиры: {{ calories.fats }} г<br>Углеводы: {{ calories.carbohydrates }} г
+                </h5>
+                <br>
                 <p class="card-text"><small><a href="category/{{c.id}}" class="btn btn-primary">В корзину</a></small>
                 </p>
             </div>
         </div>
     </div>
+</div>
+<div class="discription">
+    <h3>
+        <center><b><i>{{ product.name }}</i></b> <i>{{ product.discription }}</i></center>
+    </h3>
 </div>
 {% endblock %}
