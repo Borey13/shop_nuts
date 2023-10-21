@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+{% block title %} Заказ {% endblock %}
+
+{% block content %}
+<h1>История заказов</h1>
+<div class="order-info">
+    <h3>Ваши товары</h3>
+    {% for item in order_items %}
+    <li>{{ item.product.name }}</li>
+        <li>{{ item.price }}</li>
+        <li>{{ item.quantity }}</li>
+        <li>{{ item.total_price }}</li><br>
+    {% endfor %}
+</div>
+{% endblock %}

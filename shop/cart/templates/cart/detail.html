@@ -1,0 +1,68 @@
+{% extends "cart/base.html" %}
+{% load static %}
+{% block title %}
+    Корзина
+{% endblock %}
+{% block content %}
+<div class="fixed-container mt-5">
+    {% if cart|length <= 0 %}
+    <h1>Ваша корзинна пуста</h1><br>
+    <div class="button_buy_next">
+         <a href="{% url 'main:main' %}" >Начать покупки</a>
+    </div>
+
+    {% else %}
+    <h1>Ваша корзина</h1>
+    <table class="cart">
+        <thead>
+        <tr>
+            <th>Фото</th>
+            <th>Название</th>
+            <th>Количество</th>
+            <th><i class="bi bi-x-octagon-fill"></i></th>
+            <th>Цена</th>
+            <th>Общая стоимость</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in cart %}
+            {% with product=item.product %}
+                <tr>
+                    <td>
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="{% if product.image %}
+                                {{ product.image.url }}
+                                {% else %}
+                                {% static 'main/img/not_img.jpg' %}
+                                {% endif %}">
+
+                        </a>
+                    </td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ item.quantity }} г</td>
+                    <td>
+                        <div class="del_product">
+                            <a href="{% url 'cart:cart_remove' product.id %}">Удалить из корзины</a>
+                        </div>
+                    </td>
+                    <td class="num">{{ item.price }} ₽</td>
+                    <td class="num">{{ item.total_price }} ₽</td>
+                </tr>
+            {% endwith %}
+        {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr class="total">
+                <th colspan="2">Общая стоимость товаров в корзине:</th>
+                <th colspan="3"></th>
+                <th class="num">{{ cart.get_total_price }} ₽</th>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="button_cart">
+        <a href="{% url 'main:main' %}" class="button_buy">Продолжить покупки</a>
+        <a href="{% url 'orders:order_create' %}" class="button_order">Оформить заказ</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

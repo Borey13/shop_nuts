@@ -1,32 +1,45 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 {% block title %}
 Продукты
 {% endblock %}
 
 {% block content %}
-<div class="card mb-3" style="max-width: 2000px;">
-    <div class="row g-0">
-        <div class="col-md-4">
-            <img src="{{product.link_foto}}" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h1 class="card-title"><b>{{ product.name }}</b></h1>
-                <h2 class="card-text"><i>{{ product.price }}</i> рублей за 100 г</h2><br>
-                <h5 class="card-text"><u>Общие характеристики:</u><br>Каллорийность: {{ calories.calories }} кКал<br>Белки:
-                    {{ calories.proteins }} г<br>Жиры: {{ calories.fats }} г<br>Углеводы: {{ calories.carbohydrates }} г
-                </h5>
-                <br>
-                <p class="card-text"><small><a href="category/{{c.id}}" class="btn btn-primary">В корзину</a></small>
-                </p>
+<div class="fixed-container">
+    <div class="card mb-3" style="border: 0px; margin-top: 20px">
+        <div class="row g-0">
+            <div class="col-md-6" style="background-color: #DCDCDC">
+                <div class="image_product">
+                       <img src="{% if product.image %}
+                       {{ product.image.url }}
+                       {% else %}
+                       {% static 'main/img/not_img.jpg' %}
+                       {% endif %}">
+                </div>
+            </div>
+            <div class="col-md-6" style="background-color: #DCDCDC">
+                <div class="card-body" style="float: right">
+                    <h1><b>{{ product.name }}</b></h1>
+                    <ul class="rating" style="padding-left: 0">
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-half"></i></li>
+                    </ul>
+                    <h3 ><i>{{ product.price }}</i> рублей за 100 г</h3><br>
+
+                    <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                        {{ cart_product_form }}
+                        {% csrf_token %}
+                        <button type="submit" class="basket"><i class="bi bi-cart-plus-fill"></i></button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="discription">
-    <h3>
-        <center><b><i>{{ product.name }}</i></b> <i>{{ product.discription }}</i></center>
-    </h3>
+    <div class="discription_product_card">
+        <b>{{ product.name }}</b> <i>{{ product.discription }}</i>
+    </div>
 </div>
 {% endblock %}

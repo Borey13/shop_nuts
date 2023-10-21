@@ -5,27 +5,33 @@
 {% endblock %}
 
 {% block content %}
-<center>
-    <div class="features">
-        <h1><b><i>{{ name }}</i></b></h1>
-        <h3><i>{{ discription }}</i></h3>
-    </div>
-</center>
-<center>
-    <br>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        {% for el in data %}
-        <div class="col">
-            <div class="card h-100">
-                <img src="{{ el.link_foto }}" class="card-img-top" alt="Image" height="300">
-                <div class="card-body">
-                    <h5 class="card-title">{{ el.name }}</h5>
-                    <p class="card-text">{{ el.price }}</p>
-                </div>
-                <div class="card-footer">
-                    <small><a href="/product/{{el.id}}" class="btn btn-primary">На страницу товара</a></small>
+<div class="fixed-container">
+    <div class="heading">{{ name }}</div><br>
+    <div class="discription">{{ discription }}</div>
+</div>
+<div class="fixed-container mt-5">
+    <div class="container">
+        <div class="row">
+            {% for el in data %}
+            <div class="col-md-4">
+                <div class="category">
+                    <div class="image">
+                        <a href="/product/{{ el.id }}"><img src="{% if el.image %}
+                       {{ el.image.url }}
+                       {% else %}
+                       {% static 'main/img/not_img.jpg' %}
+                       {% endif %}"></a>
+                    </div>
+                    <div class="info">
+                        <h3>{{ el.name }}<br><small><i>{{ el.price }} <small>₽ / 100 г</small></i></i></small></h3>
+                    </div>
+                    <div class="go">
+                        <a href="/product/{{ el.id }}" id="go">                       Перейти                       </a>
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-        {% endblock %}
+    </div>
+</div>
+{% endblock %}

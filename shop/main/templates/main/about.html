@@ -1,9 +1,36 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 {% block title %}
 Информация о нас
 {% endblock %}
 
 {% block content %}
-О нашей компании
+
+<div class="fixed-container mt-5">
+    <h1 class="heading">О нашей компании</h1>
+    <br>
+    <div class="belka" style="margin-bottom: 30px">
+        <a href="{% url 'main:main' %}"><img src="{% static 'main/img/belka.jpg' %}" alt="photo"></a>
+    </div>
+    <h5>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h5>
+    <br>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    <br>
+    <div class="address" style="margin-bottom: 30px">
+        <a href="https://yandex.ru/maps/25/pskov/house/naberezhnaya_reki_velikoy_16/ZkEYdQRiTUIPQFttfXRwcH5iYQ==/?ll=
+                28.330750%2C57.809777&tilt=0.8726646259971648&z=16.64" target="_blank">
+                <img src="{% static 'main/img/address.png' %}" alt="address">
+        </a>
+    </div>
+    <small>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</small>
+</div>
 {% endblock %}

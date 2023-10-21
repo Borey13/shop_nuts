@@ -1,0 +1,18 @@
+{% extends 'myauth/base.html' %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+<div class="fixed-container">
+    <div id="reg-form">
+        <h3>Добро пожаловать!</h3>
+        <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Войти</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

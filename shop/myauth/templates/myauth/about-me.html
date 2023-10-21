@@ -1,0 +1,22 @@
+{% extends 'myauth/base.html' %}
+{% block title %}
+  About me
+{% endblock %}
+
+{% block content %}
+  <h1>Личный кабинет</h1>
+  {% if user.is_authenticated %}
+    <h2>Информация о {{ user.username }}</h2>
+    <p>Логин: {{ user.username }}</p>
+    <p>Имя: {{ user.first_name }}</p>
+    <p>Фамилия: {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Телефон: {{ user.profile.mobile }}</p>
+    <a href="{% url 'orders:my_orders' %}">История заказов</a>
+    <a href="{% url 'myauth:profile' %}">Изменить</a>
+  {% else %}
+    <h2>Войдите в личный кабинет</h2>
+  {% endif %}
+{% endblock %}
+
+

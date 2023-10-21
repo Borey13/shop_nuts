@@ -1,0 +1,29 @@
+{% extends 'myauth/base.html' %}
+
+{% block title %}
+  Register
+{% endblock %}
+
+{% block content %}
+<div class="fixed-container">
+    {% if not request.user.is_authenticated %}
+    <div id="reg-form">
+        <h3>Добро пожаловать!</h3>
+        <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Регистрация</button>
+        </form>
+    </div>
+    {% else %}
+    <div class="hint">
+        Сначала нужно выйти из личного кабинета!
+    </div>
+    <div class="logout">
+        <a href="{% url 'myauth:Logout' %}">Выход из личного кабинета</a>
+    </div>
+
+
+    {% endif %}
+</div>
+{% endblock %}

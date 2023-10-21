@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+    Главная страница
+{% endblock %}
+
+{% block content %}
+<h1>Search Results</h1>
+
+<ul>
+  {% for product in object_list %}
+    <li>
+      {{ product.name }}, {{ product.price }}
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

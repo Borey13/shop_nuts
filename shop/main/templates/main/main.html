@@ -1,36 +1,50 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block title %}
-Категории
+    Главная страница
 {% endblock %}
 
 {% block content %}
-<center>
-    <div class="features">
-        <h1><b><i>Твой Орех</i></b></h1>
-        <h2><i>полезные и натуральные продукты по низким ценам</i></h2>
-        <h4>Наш магазин - это находка для каждого любителя вкусных и полезных продуктов. Нам удалось собрать в одном
-            месте все, что может Вас заинтересовать. Откажитесь от длительных поездок по магазинам своего города,
-            ведь теперь, можно сделать заказ продукции в пару кликов.</h4>
+<div class="fixed-container">
+    <form action="{% url 'main:search_results' %}" method="get">
+        <input name="q" type="text" placeholder="Search...">
+    </form>
+    <div class="heading">
+        Твой Орех
     </div>
-</center>
-<center>
-    <br>
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    {% for c in categories %}
-        <div class="col">
-            <div class="card h-100">
-                <img src="{{ c.link_foto }}" class="card-img-top" alt="Image" height="300">
-                <div class="card-body">
-                    <h3 class="card-title">{{ c.name }}</h3>
-                </div>
-                <div class="card-footer">
-                    <small>
-                        <a href="category/{{c.id}}" class="btn btn-primary">Подробнее</a>
-                    </small>
+    <div class="slogan">
+        полезные и натуральные продукты по низким ценам
+    </div>
+    <div class="discription">
+        <b>Наш магазин</b> - это находка для каждого любителя вкусных и полезных продуктов. Нам удалось собрать в одном
+        месте все, что может Вас заинтересовать. Откажитесь от длительных поездок по магазинам своего города,
+        ведь теперь, можно сделать заказ продукции в пару кликов.
+    </div>
+</div>
+
+<div class="fixed-container mt-5">
+    <div class="container">
+        <div class="row">
+            {% for c in categories %}
+            <div class="col-md-4">
+                <div class="category">
+                    <div class="image">
+                        <a href="/category/{{ c.id }}"><img src="{% if c.image %}
+                       {{ c.image.url }}
+                       {% else %}
+                       {% static 'main/img/not_img.jpg' %}
+                       {% endif %}"></a>
+                    </div>
+                    <div class="info">
+                        <h3>{{ c.name }}</h3>
+                    </div>
+                    <div class="go">
+                        <a href="category/{{ c.id }}" id="go">                        Перейти                        </a>
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-
-    {% endfor %}
+    </div>
+</div>
 {% endblock %}

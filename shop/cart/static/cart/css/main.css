@@ -1,0 +1,283 @@
+                                      ### Базовый шаблон ###
+
+html, body {
+	margin: 0;
+	padding: 0;
+	min-width: 1000px;
+}
+
+body {
+    background-color: #DCDCDC;
+}
+
+#black-bar {
+	background-color: black;
+	color: white;
+	padding: 20px 0;
+}
+
+#footer {
+	background-color: black;
+	color: white;
+	padding: 20px 0;
+	position: absolute;
+	width: 100%;
+
+}
+
+#footer-right {
+	background-color: black;
+	color: white;
+	padding: 20px 0;
+	width: 33%;
+	float: left;
+
+}
+
+#footer-left {
+	background-color: black;
+	color: white;
+	padding: 20px 0;
+	width: 33%;
+	float: left;
+}
+
+#footer-center {
+	background-color: black;
+	color: white;
+	padding: 20px 0;
+	width: 33%;
+	float: left;
+}
+
+.fixed-container {
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#telephone {
+	float: right;
+}
+
+#logo {
+    position: absolute;
+    top: 5px;
+}
+
+#up-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #fd7e14;
+    padding: 10px;
+    width: 75px;
+    height: 75px;
+    text-align: center;
+    border-radius:50px;
+    color: black;
+    text-decoration: none;
+}
+
+#nav {
+    float:right;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+#nav li {
+    display: inline-block;
+    float: right;
+    padding-left: 10px;
+}
+
+#nav a {
+    text-decoration: none;
+    color: #fd7e14;
+    padding-right: 5px;
+}
+
+#header {
+    background-color: white;
+    height: 60px;
+}
+
+.dropbtn {
+  background-color: white;
+  color: #fd7e14;
+  padding: 0 5px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: white;}
+
+
+
+#footer {
+	background-color: black;
+	color: white;
+	padding: 20px 0;
+}
+
+.popular {
+    margin-top: 20px;
+    text-align: center;
+    color: #fd7e14;
+    font-weight: bold;
+    font-size: 60px;
+    text-shadow: 0.1em 0.1em 0.1em #212121;
+}
+
+.go {
+    width: 304px;
+    height: 30px;
+    background-color: #fd7e14;
+    front-size: 10px;
+    border-radius: 7px;
+    border: none;
+    margin-bottom: 33px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.go a {
+    color: black;
+    text-decoration: none;
+    white-space: pre;
+}
+
+
+.image {
+    margin-bottom: 0px;
+}
+
+.image img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+
+.cart {
+    text-align:center;
+
+}
+
+
+.cart td {
+
+    padding: 8px;
+}
+
+.cart img {
+    height: 200px;
+    width: 100%;
+    margin: 10px  0 10px 0;
+}
+
+h1 {
+    margin: 20px 0 20px 0;
+    text-align: center;
+    color: #fd7e14;
+    font-weight: bold;
+    font-size: 60px;
+    text-shadow: 0.1em 0.1em 0.1em #212121;
+}
+
+.cart tfoot {
+    background-color: lightgray;
+    font-size: 25px;
+}
+
+.cart thead {
+    background-color: lightgray;
+    font-size: 15px;
+}
+
+.del_product {
+    background-color: red;
+    border-radius: 7px;
+    height: 30px;
+
+
+
+}
+
+.cart td a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.button_cart {
+    margin: 30px 25px 150px 0;
+    text-align: right;
+}
+
+.button_buy {
+    background-color: #1CAC78;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    width: 100px;
+    height: 50px;
+    padding: 20px 40px 20px 40px;
+    border-radius: 7px;
+}
+
+.button_order {
+    background-color: #fd7e14;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    width: 100px;
+    height: 50px;
+    padding: 20px 40px 20px 40px;
+    border-radius: 7px;
+}
+
+
+.button_buy_next {
+    background-color: #1CAC78;
+    border-radius: 7px;
+    width: 350px;
+    height: 50px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.button_buy_next a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+}
