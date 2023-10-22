@@ -1,4 +1,3 @@
-from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
@@ -33,6 +32,3 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
-
-
-

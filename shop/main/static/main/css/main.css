@@ -78,6 +78,7 @@ body {
     border-radius:50px;
     color: black;
     text-decoration: none;
+    z-index: 100;
 }
 
 #nav {
@@ -195,7 +196,7 @@ body {
 .go a {
     color: black;
     text-decoration: none;
-    white-space: pre;
+    padding: 0 120px 0 120px;
 }
 
 .heading {
@@ -240,10 +241,20 @@ body {
 }
 
 .image_product img {
-    height: 400px;
+    height: 300px;
     width: 100%;
     object-fit: cover;
     border-radius: 7px;
+}
+
+#reviews {
+    color: white;
+    border: 0;
+    border-radius: 7px;
+    background-color: #87CEEB;
+    padding: 10px 73px 10px 74px;
+    text-decoration: none;
+
 }
 
 .basket {

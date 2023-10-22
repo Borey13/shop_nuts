@@ -4,7 +4,7 @@ from main.models import Product
 
 
 class Order(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь')
     first_name = models.CharField(max_length=50, verbose_name='Имя')
     last_name = models.CharField(max_length=50, verbose_name='Фамилия')
     email = models.EmailField()

@@ -28,7 +28,9 @@
                         <li><i class="bi bi-star-half"></i></li>
                     </ul>
                     <h3 ><i>{{ product.price }}</i> рублей за 100 г</h3><br>
-
+                    <div style="margin-bottom: 15px">
+                        <a href="#" id="reviews">Отзывы покупателей о товаре</a>
+                    </div>
                     <form action="{% url 'cart:cart_add' product.id %}" method="post">
                         {{ cart_product_form }}
                         {% csrf_token %}
