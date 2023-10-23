@@ -1,6 +1,7 @@
 {% extends 'main/base.html' %}
-
-{% block title %} Заказ {% endblock %}
+{% block title %}
+    Заказ
+{% endblock %}
 
 {% block content %}
 <div class="fixed-container mt-5">
@@ -12,23 +13,23 @@
     </div>
     {% else %}
     <div class="one">
-    <div id="order-info">
-        <ul>
-            <h5>Ваш заказ:</h5>
-            {% for item in cart %}
+        <div id="order-info">
+            <ul>
+                <h5>Ваш заказ:</h5>
+                {% for item in cart %}
                 <li>
                     <b>{{ item.product.name }}</b>: {{ item.quantity }} г / {{ item.total_price }} ₽
                 </li>
-            {% endfor %}
-        </ul>
-        <p><b>Итого: {{ cart.get_total_price }} ₽</b></p>
-    </div>
-    <form action="" method="post" class="order-form">
+                {% endfor %}
+            </ul>
+            <p><b>Итого: {{ cart.get_total_price }} ₽</b></p>
+        </div>
+        <form action="" method="post" class="order-form">
         <h2 style="color:#8B4513">Заполните данные для заказа:</h2>
         {{ form.as_p }}
         <p><input style="color: white; height: 50px; font-size:20px; background-color: #8B4513" type="submit" value="Заказать"></p>
         {% csrf_token %}
-    </form>
+        </form>
     </div>
     {% endif %}
 </div>

@@ -211,12 +211,10 @@ form input {
 }
 
 h1 {
-    margin: 20px 0 20px 0;
+    color: #8B4513;
+    font-size: 30px;
     text-align: center;
-    color: #fd7e14;
-    font-weight: bold;
-    font-size: 60px;
-    text-shadow: 0.1em 0.1em 0.1em #212121;
+    margin-bottom: 50px;
 }
 
 .cart tfoot {

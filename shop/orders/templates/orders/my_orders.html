@@ -1,5 +1,7 @@
 {% extends 'main/base.html' %}
-{% block title %} Заказ {% endblock %}
+{% block title %}
+    История заказов
+{% endblock %}
 
 {% block content %}
 <div class="fixed-container">
@@ -24,7 +26,7 @@
                     <b>Создан:</b> {{ order.created }}
                 </p>
             </li>
-                <a class="link_order_detail" href="{% url 'orders:my_orders_items' order.id %}">Детали заказа</a>
+            <a class="link_order_detail" href="{% url 'orders:my_orders_items' order.id %}">Детали заказа</a>
             {% endfor %}
         </ul>
     </div>

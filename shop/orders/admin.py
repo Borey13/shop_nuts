@@ -9,8 +9,8 @@ class OrderItemInline(admin.TabularInline):
 
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['id', 'user', 'first_name', 'email', 'mobile',
-                    'city', 'address', 'created']
-    list_filter = ['created']
+                    'city', 'address', 'created', 'accept']
+    list_filter = ['created', 'accept']
     inlines = [OrderItemInline]
 
 
