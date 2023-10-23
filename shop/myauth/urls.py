@@ -6,9 +6,9 @@ from . import views
 app_name = 'myauth'
 
 urlpatterns = [
-    path('login/', LoginView.as_view(template_name='myauth/login.html', redirect_authenticated_user=True), name='Login'),
-    path('logout/', MyLogoutView.as_view(), name='Logout'),
-    path('about-me/', AboutMeView.as_view(), name='About-me'),
-    path('register/', RegisterView.as_view(), name='Register'),
+    path('login/', LoginView.as_view(template_name='myauth/login.html', redirect_authenticated_user=True), name='login'),
+    path('logout/', MyLogoutView.as_view(), name='logout'),
+    path('about-me/', AboutMeView.as_view(), name='about-me'),
+    path('register/', RegisterView.as_view(), name='register'),
     path('profile/', views.profile, name='profile'),
 ]

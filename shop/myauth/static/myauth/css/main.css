@@ -66,7 +66,62 @@ body {
 
 #header {
     background-color: white;
-    height: 60px;
+    height: 86px;
+}
+
+
+#header form input {
+    margin-top: 7px;
+    border-radius: 7px;
+    border: 3px solid #fd7e14;
+    width: 300px;
+}
+
+#footer {
+	background-color: black;
+	color: white;
+	padding: 20px 0;
+	position: absolute;
+	width: 100%;
+}
+
+#footer-right {
+	background-color: black;
+	color: white;
+	padding: 20px 0;
+	width: 33%;
+	float: left;
+}
+
+#footer-left {
+	background-color: black;
+	color: white;
+	padding: 20px 0;
+	width: 33%;
+	float: left;
+}
+
+#footer-center {
+	background-color: black;
+	color: white;
+	padding: 20px 0;
+	width: 33%;
+	float: left;
+}
+
+#up-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #fd7e14;
+    padding: 10px;
+    width: 75px;
+    height: 75px;
+    text-align: center;
+    border-radius:50px;
+    color: black;
+    text-decoration: none;
+    z-index: 100;
 }
 
 .dropbtn {
@@ -109,12 +164,13 @@ body {
 #reg-form {
     border: 4mm ridge rgba(253, 126, 20, .6);
     padding: 15px;
-    margin: 100px 280px;
+    margin: 50px 280px 200px 280px;
 }
 
 #reg-form h3 {
     text-align: center;
     margin-bottom: 20px;
+    color: #8B4513;
 }
 
 #reg-form input {
@@ -142,17 +198,68 @@ body {
 }
 
 .logout {
-    background-color: #fd7e14;
+    background-color: #8B4513;
     border-radius: 7px;
     width: 350px;
     height: 40px;
-    margin: auto;
+    margin: 0 305px 250px 305px;
     text-align: center;
 }
 
 .logout a {
-    color: black;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
     font-size: 22px;
+}
+
+
+.heading {
+    margin-top: 20px;
+    text-align: center;
+    color: #fd7e14;
+    font-weight: bold;
+    font-size: 60px;
+    text-shadow: 0.1em 0.1em 0.1em #212121;
+    margin-bottom: 15px;
+}
+
+
+.user-info {
+     font-size: 20px;
+     margin-bottom: 100px;
+}
+
+
+.user-info h5 {
+     color: #8B4513;
+     font-size: 30px;
+}
+
+.user-info strong {
+     color: #fd7e14;
+     font-size: 40px;
+}
+
+.link-order {
+    background-color: #8B4513;
+    text-decoration: none;
+    color: white;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.link-change-profile {
+    background-color: #fd7e14;
+    text-decoration: none;
+    color: black;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.link-change-profile:hover {
+    color:black;
+}
+
+.link-order:hover {
+    color:white;
 }

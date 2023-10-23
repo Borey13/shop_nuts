@@ -3,22 +3,33 @@
 {% block title %} Заказ {% endblock %}
 
 {% block content %}
-    <h1>Заказ</h1>
-    <div class="order-info">
-        <h3>Ваш заказ</h3>
+<div class="fixed-container mt-5">
+    {% if not user.is_authenticated %}
+    <div class="orders_no">
+        Заказы могут делать только авторизованные пользователи<br><br>
+        <a class="link-change-profile" href="{% url 'myauth:login' %}">Вход</a>
+        <a class="link-order" href="{% url 'myauth:register' %}">Регистрация</a>
+    </div>
+    {% else %}
+    <div class="one">
+    <div id="order-info">
         <ul>
+            <h5>Ваш заказ:</h5>
             {% for item in cart %}
                 <li>
-                    {{ item.product.name }}: {{ item.quantity }} г x {{ item.total_price }} ₽
-
+                    <b>{{ item.product.name }}</b>: {{ item.quantity }} г / {{ item.total_price }} ₽
                 </li>
             {% endfor %}
         </ul>
-        <p>Итого: {{ cart.get_total_price }} ₽</p>
+        <p><b>Итого: {{ cart.get_total_price }} ₽</b></p>
     </div>
     <form action="" method="post" class="order-form">
+        <h2 style="color:#8B4513">Заполните данные для заказа:</h2>
         {{ form.as_p }}
-        <p><input type="submit" value="Заказать"></p>
+        <p><input style="color: white; height: 50px; font-size:20px; background-color: #8B4513" type="submit" value="Заказать"></p>
         {% csrf_token %}
     </form>
+    </div>
+    {% endif %}
+</div>
 {% endblock %}

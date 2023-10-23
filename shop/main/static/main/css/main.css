@@ -22,7 +22,6 @@ body {
 	padding: 20px 0;
 	position: absolute;
 	width: 100%;
-
 }
 
 #footer-right {
@@ -101,7 +100,16 @@ body {
 
 #header {
     background-color: white;
-    height: 60px;
+    height: 86px;
+}
+
+
+
+form input {
+    margin-top: 7px;
+    border-radius: 7px;
+    border: 3px solid #fd7e14;
+    width: 300px;
 }
 
 .dropbtn {
@@ -150,7 +158,6 @@ body {
                                         ### Главная страница ###
 
 
-
 .category {
     margin-bottom: 30px;
     padding-bottom: 33px;
@@ -176,10 +183,7 @@ body {
     margin-bottom: 0px;
     margin-top: 0px;
     text-align: center;
-
 }
-
-
 
 .go {
     width: 304px;
@@ -196,7 +200,7 @@ body {
 .go a {
     color: black;
     text-decoration: none;
-    padding: 0 120px 0 120px;
+    padding: 0 40px 0 40px;
 }
 
 .heading {
@@ -251,7 +255,7 @@ body {
     color: white;
     border: 0;
     border-radius: 7px;
-    background-color: #87CEEB;
+    background-color: #8B4513;
     padding: 10px 73px 10px 74px;
     text-decoration: none;
 
@@ -278,11 +282,10 @@ body {
 }
 
 .popular {
-    margin-top: 20px;
     text-align: center;
     color: #fd7e14;
     font-weight: bold;
-    font-size: 60px;
+    font-size: 45px;
     text-shadow: 0.1em 0.1em 0.1em #212121;
 }
 
@@ -313,6 +316,153 @@ form label {
     float:center;
 }
 
+.no_search {
+    color: #8B4513;
+    font-size: 35px;
+    text-align: center;
+}
 
 
+                                                ### Order/create ###
+{}
+form.order-form {
+    float: right;
+    width: 60%;
+    margin:10px 0 10px 0;
+}
 
+
+#order-info {
+    float: right;
+	width: 40%;
+	border: 4mm ridge rgba(253, 126, 20, .6);
+	padding: 15px;
+	font-size:15px;
+	margin-top:10px;
+}
+
+
+form.order-form label {
+    background-color: #fd7e14;
+    height: 30px;
+    padding: 1px;
+}
+
+
+form.order-form input {
+    border-radius: 7px;
+    border: 0;
+    height: 30px;
+    width: 300px;
+}
+
+.one {
+    height: 450px;
+}
+
+.success {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fd7e14;
+}
+
+.success h4, .success h5 {
+    color: #8B4513;
+}
+
+
+.buy_now {
+    background-color: #8B4513;
+    border-radius: 7px;
+    width: 350px;
+    height: 50px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.buy_now a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 3px 70px 15px 70px;
+}
+
+.order_info {
+     font-size: 20px;
+     margin-bottom: 100px;
+}
+
+.order_info p {
+     margin: 16px 0 5px 0;
+}
+
+.order_info a {
+     background-color: #fd7e14;
+     text-decoration: none;
+     color: black;
+     border-radius: 7px;
+      padding: 5px 40px 5px 40px;
+}
+
+.order_info h3 {
+     color: #8B4513;
+}
+
+.detail_order {
+    text-align:center;
+}
+
+.detail_order td {
+    padding: 8px;
+}
+
+.detail_order img {
+    height: 200px;
+    width: 100%;
+    margin: 10px  0 10px 0;
+}
+
+.detail_order thead {
+    background-color: lightgray;
+    font-size: 15px;
+}
+
+.detail_order td a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.orders_no {
+    color: #8B4513;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.link-order {
+    background-color: #8B4513;
+    text-decoration: none;
+    color: white;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.link-change-profile {
+    background-color: #fd7e14;
+    text-decoration: none;
+    color: black;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.link-change-profile:hover {
+    color:black;
+}
+
+.link-order:hover {
+    color:white;
+}

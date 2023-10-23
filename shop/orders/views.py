@@ -22,7 +22,7 @@ def order_create(request):
                                          product=item['product'],
                                          price=item['price'],
                                          quantity=item['quantity'],
-                                         total_price=item['price'] * item['quantity'])
+                                         total_price=item['price'] * item['quantity'] / 100)
             # очистка корзины
             cart.clear()
 
@@ -46,4 +46,7 @@ def my_orders_items(request, id):
     popular_product = random.sample(list(products), 6)
     order = Order.objects.get(pk=id)
     order_items = OrderItem.objects.filter(order=order)
-    return render(request, 'orders/my_orders_items.html', {'order_items': order_items, 'popular': popular_product})
+    return render(request, 'orders/my_orders_items.html', {'order_items': order_items,
+                                                           'order': order,
+                                                           'popular': popular_product
+                                                           })

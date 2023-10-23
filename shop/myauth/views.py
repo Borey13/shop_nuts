@@ -15,13 +15,13 @@ class AboutMeView(TemplateView):
 class LoginView(CreateView):
     form_class = LoginUserForm
     template_name = "myauth/login.html"
-    success_url = reverse_lazy("myauth:About-me")
+    success_url = reverse_lazy("myauth:about-me")
 
 
 class RegisterView(CreateView):
     form_class = RegisterUserForm
     template_name = "myauth/register.html"
-    success_url = reverse_lazy("myauth:About-me")
+    success_url = reverse_lazy("myauth:about-me")
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -34,7 +34,7 @@ class RegisterView(CreateView):
 
 
 class MyLogoutView(LogoutView):
-    next_page = reverse_lazy("myauth:Login")
+    next_page = reverse_lazy("myauth:login")
 
 
 @login_required
@@ -47,7 +47,7 @@ def profile(request):
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
-            return redirect('myauth:About-me')
+            return redirect('myauth:about-me')
 
     else:
         u_form = UserUpdateForm(instance=request.user)

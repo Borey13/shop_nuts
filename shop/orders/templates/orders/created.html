@@ -1,9 +1,17 @@
 {% extends "main/base.html" %}
 
-{% block title %}Thank you{% endblock %}
+{% block title %} Thank you {% endblock %}
 
 {% block content %}
-    <h1>Thank you</h1>
-    <p>Your order has been successfully completed. Your order number is
-        <strong>{{ order.id }}</strong>.</p>
+<div class="fixed-container">
+    <div class="success">
+        <h1>Спасибо за заказ!!!</h1>
+        <h4>Заказ принят! Номер Вашего заказа:
+        <strong>{{ order.id }}</strong>.</h4>
+        <h5>Будем рады видеть Вас снова!!!</h5><br>
+        <div class="buy_now">
+           <a href="{% url 'main:main' %}" >Начать покупки</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

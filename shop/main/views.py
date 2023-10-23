@@ -38,11 +38,11 @@ def product(request, id_prod):
                                                  'cart_product_form': cart_product_form})
 
 
-class SearchResultsView(ListView):
-    model = Product
-    template_name = 'main/search_results.html'
+def search_results(request):
+    query = request.GET.get('q')
+    object_list = Product.objects.filter(name__icontains=query)
+    products = Product.objects.all()
+    popular_product = random.sample(list(products), 6)
+    return render(request, 'main/search_results.html', {'object_list': object_list, 'popular': popular_product})
 
-    def get_queryset(self):
-        query = self.request.GET.get('q')
-        object_list = Product.objects.filter(name__icontains=query)
-        return object_list
+

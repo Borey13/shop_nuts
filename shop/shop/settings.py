@@ -132,5 +132,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = reverse_lazy("myauth:About-me")
+LOGIN_REDIRECT_URL = reverse_lazy("myauth:about-me")
 

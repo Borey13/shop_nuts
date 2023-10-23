@@ -1,19 +1,23 @@
 {% extends 'myauth/base.html' %}
+{% block title %}
+	Изменение профиля пользователя
+{% endblock %}
+
 {% block content %}
-
-      	<h2>{{ user.username }}</h2>
-  	    <p>{{ user.email }}</p>
-
-  	<form method="POST" enctype="multipart/form-data">
-      	{% csrf_token %}
-      	<fieldset class="form-group">
-          	<legend class="border-bottom mb-4">Ваш профиль</legend>
-          	{{ u_form.as_p }}
-			{{ p_form.as_p }}
-      	</fieldset>
-      	<div class="form-group">
-          	<button class="btn btn-outline-info" type="submit">Обновить</button>
-      	</div>
-  	</form>
+<div class="fixed-container">
+	<div class="heading">
+		Изменение данных профиля
 	</div>
-{% endblock content %}
+  	<div id="reg-form">
+        <h3>Ваш профиль</h3>
+        <form method=post>
+        {% csrf_token %}
+        {{ u_form.as_p }}
+		{{ p_form.as_p }}
+        <button type="submit">Обновить</button>
+        </form>
+    </div>
+</div>
+{% endblock%}
+
+

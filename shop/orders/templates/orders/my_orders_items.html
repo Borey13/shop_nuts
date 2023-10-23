@@ -1,15 +1,55 @@
 {% extends 'main/base.html' %}
-{% block title %} Заказ {% endblock %}
+{% load static %}
+{% block title %}
+    Заказ
+{% endblock %}
 
 {% block content %}
-<h1>История заказов</h1>
-<div class="order-info">
-    <h3>Ваши товары</h3>
-    {% for item in order_items %}
-    <li>{{ item.product.name }}</li>
-        <li>{{ item.price }}</li>
-        <li>{{ item.quantity }}</li>
-        <li>{{ item.total_price }}</li><br>
-    {% endfor %}
+<div class="fixed-container">
+   {% if order_items|length <= 0 %}
+    <div class="orders_no">
+        Пустой заказ...
+    </div><br>
+        <div class="buy_now">
+           <a href="{% url 'main:main' %}" >Начать покупки</a>
+        </div>
+
+    {% else %}
+
+    <div class="heading">
+        Детали заказа № {{order.id}}
+    </div><br>
+
+        <table class="detail_order">
+        <thead>
+        <tr>
+            <th>Фото</th>
+            <th>Название</th>
+            <th>Количество</th>
+            <th>Цена</th>
+            <th>Общая стоимость</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in order_items %}
+            {% with product=item.product %}
+                <tr>
+                    <td>
+                        <a href="{{ product.get_absolute_url }}"><img src="{% if item.product.image %}
+                       {{ item.product.image.url }}
+                       {% else %}
+                       {% static 'main/img/not_img.jpg' %}
+                       {% endif %}"></a>
+                    </td>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.quantity }} г</td>
+                    <td class="num">{{ item.price }} ₽</td>
+                    <td class="num">{{ item.total_price }} ₽</td>
+                </tr>
+            {% endwith %}
+        {% endfor %}
+        </tbody>
+    </table><br><br>
+{% endif %}
 </div>
 {% endblock %}
