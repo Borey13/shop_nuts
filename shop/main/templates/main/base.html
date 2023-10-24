@@ -27,7 +27,6 @@
                     <div class="cart">
                         {% with total_items=cart|length %}
                         {% if cart|length > 0 %}
-
                             <a href="{% url 'cart:cart_detail' %}">
                             {{ total_items }} г на
                             {{ cart.get_total_price }} ₽
@@ -41,7 +40,7 @@
                     </div>
                 </li>
 				<li><a href="{% url 'cart:cart_detail' %}"><i class="bi bi-cart-check-fill"></i> Корзина </a></li>
-				<li><a href="{% url 'main:About' %}"><i class="bi bi-info-square-fill"></i> О нас /</a></li>
+				<li><a href="{% url 'main:about' %}"><i class="bi bi-info-square-fill"></i> О нас /</a></li>
 				<li><a href="{% url 'main:main' %}"><i class="bi bi-house-door-fill"></i> Главная /</a></li>
 				<li><a href="{% url 'myauth:register' %}"><i class="bi bi-person-fill-add"></i> Регистрация /</a></li>
                 <li>
@@ -60,6 +59,11 @@
                 </li>
 			</ul>
 		</div>
+        {% if perms.main.add_product %}
+        <div class="admins">
+            <a href="{% url 'main:admins' %}">Администраторам</a>
+        </div>
+        {% endif %}
 	</div>
 </div>
 

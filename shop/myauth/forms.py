@@ -39,4 +39,4 @@ class ProfileUpdateForm(forms.ModelForm):
     mobile = forms.CharField(label='Телефон', widget=forms.TextInput(attrs={'class': 'form-input'}))
     class Meta:
         model = Profile
-        fields = ('mobile',)
+        fields = ('mobile', 'city')

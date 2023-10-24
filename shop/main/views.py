@@ -1,7 +1,6 @@
 import random
 from django.shortcuts import render
-from django.views.generic import ListView
-
+from django.views.generic import TemplateView
 from .models import Category, Product
 from cart.forms import CartAddProductForm
 
@@ -25,7 +24,7 @@ def category(request, id_cat):
     popular_product = random.sample(list(products), 6)
     cat_name = Category.objects.get(category_id=id_cat)
     return render(request, 'main/category.html',
-                  {'data': data, 'name': cat_name.name, 'discription': cat_name.discription,
+                  {'data': data, 'name': cat_name.name, 'description': cat_name.description,
                    'popular': popular_product})
 
 
@@ -46,3 +45,5 @@ def search_results(request):
     return render(request, 'main/search_results.html', {'object_list': object_list, 'popular': popular_product})
 
 
+class AdminsView(TemplateView):
+    template_name = "admin.html"

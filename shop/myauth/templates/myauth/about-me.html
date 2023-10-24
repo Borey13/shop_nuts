@@ -16,6 +16,7 @@
     <p><b>Фамилия:</b> {{ user.last_name }}</p>
     <p><b>Email:</b> {{ user.email }}</p>
     <p><b>Телефон:</b> {{ user.profile.mobile }}</p>
+    <p><b>Город:</b> {{ user.profile.city }}</p>
     <a class="link-order" href="{% url 'orders:my_orders' %}">История заказов</a>
     <a class="link-change-profile" href="{% url 'myauth:profile' %}">Изменить</a>
   </div>

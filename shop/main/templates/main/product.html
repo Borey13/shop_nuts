@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="fixed-container">
-    <div class="card mb-3" style="border: 0px; margin-top: 20px">
+    <div class="card" style="border: 0px; margin-top: 75px">
         <div class="row g-0">
             <div class="col-md-6" style="background-color: #DCDCDC">
                 <div class="image_product">
@@ -27,7 +27,7 @@
                         <li><i class="bi bi-star-fill"></i></li>
                         <li><i class="bi bi-star-half"></i></li>
                     </ul>
-                    <h3 ><i>{{ product.price }}</i> рублей за 100 г</h3><br>
+                    <h4 ><i>{{ product.price }}</i> ₽ за 100 г</h4><br>
                     <div style="margin-bottom: 15px">
                         <a href="#" id="reviews">Отзывы покупателей о товаре</a>
                     </div>
@@ -40,8 +40,8 @@
             </div>
         </div>
     </div>
-    <div class="discription_product_card">
-        <b>{{ product.name }}</b> <i>{{ product.discription }}</i>
+    <div class="description_product_card">
+        <b>{{ product.name }}</b> <i>{{ product.description }}</i>
     </div>
 </div><br>
 {% endblock %}

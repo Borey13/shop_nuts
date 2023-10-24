@@ -6,8 +6,9 @@
 
 {% block content %}
 <div class="fixed-container">
-    <div class="heading">{{ name }}</div><br>
-    <div class="discription">{{ discription }}</div>
+    <div class="heading">{{ name }}</div>
+    <br>
+    <div class="description">{{ description }}</div>
 </div>
 <div class="fixed-container mt-5">
     <div class="container">
@@ -17,13 +18,13 @@
                 <div class="category">
                     <div class="image">
                         <a href="/product/{{ el.id }}"><img src="{% if el.image %}
-                       {{ el.image.url }}
-                       {% else %}
-                       {% static 'main/img/not_img.jpg' %}
-                       {% endif %}"></a>
+                        {{ el.image.url }}
+                        {% else %}
+                        {% static 'main/img/not_img.jpg' %}
+                        {% endif %}"></a>
                     </div>
                     <div class="info">
-                        <h3>{{ el.name }}<br><small><i>{{ el.price }} <small>₽ / 100 г</small></i></small></h3>
+                        <h4>{{ el.name }}<br></h4><i>{{ el.price }} ₽ / 100 г</i>
                     </div>
                     <div class="go">
                         <a href="/product/{{ el.id }}" id="go">Перейти</a>

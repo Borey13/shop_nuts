@@ -22,7 +22,6 @@ body {
 	padding: 20px 0;
 	position: absolute;
 	width: 100%;
-
 }
 
 #footer-right {
@@ -31,7 +30,6 @@ body {
 	padding: 20px 0;
 	width: 33%;
 	float: left;
-
 }
 
 #footer-left {
@@ -107,7 +105,27 @@ form input {
     margin-top: 7px;
     border-radius: 7px;
     border: 3px solid #fd7e14;
-    width: 300px;
+    width: 283px;
+}
+
+.admins {
+    border: 3px solid #fd7e14;
+    border-radius: 7px;
+    margin-top: 87px;
+    width: 182px;
+    height: 31px;
+    text-align: center;
+    color: black;
+    float: right;
+    position:absolute;
+    background-color: #fd7e14;
+}
+
+.admins a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 3px 13px;
 }
 
 .dropbtn {
@@ -195,12 +213,10 @@ form input {
 
 .cart {
     text-align:center;
-
 }
 
 
 .cart td {
-
     padding: 8px;
 }
 
@@ -231,9 +247,6 @@ h1 {
     background-color: red;
     border-radius: 7px;
     height: 30px;
-
-
-
 }
 
 .cart td a {
@@ -277,7 +290,6 @@ h1 {
 .button_order:hover {
     color: black;
 }
-
 
 .button_buy_next {
     background-color: #8B4513;

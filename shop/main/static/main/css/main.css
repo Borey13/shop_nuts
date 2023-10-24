@@ -30,7 +30,6 @@ body {
 	padding: 20px 0;
 	width: 33%;
 	float: left;
-
 }
 
 #footer-left {
@@ -83,7 +82,7 @@ body {
 #nav {
     float:right;
     padding-top: 18px;
-    padding-bottom: 18px;
+    padding-bottom: px;
 }
 
 #nav li {
@@ -109,7 +108,27 @@ form input {
     margin-top: 7px;
     border-radius: 7px;
     border: 3px solid #fd7e14;
-    width: 300px;
+    width: 283px;
+}
+
+.admins {
+    border: 3px solid #fd7e14;
+    border-radius: 7px;
+    margin-top: 87px;
+    width: 182px;
+    height: 31px;
+    text-align: center;
+    color: black;
+    float: right;
+    position:absolute;
+    background-color: #fd7e14;
+}
+
+.admins a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 3px 13px;
 }
 
 .dropbtn {
@@ -148,13 +167,6 @@ form input {
 .dropdown:hover .dropbtn {background-color: white;}
 
 
-
-#footer {
-	background-color: black;
-	color: white;
-	padding: 20px 0;
-}
-
                                         ### Главная страница ###
 
 
@@ -167,7 +179,6 @@ form input {
     padding: 0px;
 }
 
-
 .image {
     margin-bottom: 0px;
 }
@@ -179,7 +190,7 @@ form input {
     border-radius: 7px;
 }
 
-.info h3 {
+.info h4 {
     margin-bottom: 0px;
     margin-top: 0px;
     text-align: center;
@@ -218,13 +229,13 @@ form input {
     font-style: italic;
 }
 
-.discription {
+.description {
     text-align: center;
     font-size: 20px;
     font-style: oblique;
 }
 
-.info small {
+.info {
     text-align: center;
 }
 
@@ -238,8 +249,8 @@ form input {
     display: inline-block;
     color: #FFA500;
     font-size: 25px;
-
 }
+
 .image_product {
     margin-bottom: 0px;
 }
@@ -258,7 +269,6 @@ form input {
     background-color: #8B4513;
     padding: 10px 73px 10px 74px;
     text-decoration: none;
-
 }
 
 .basket {
@@ -268,15 +278,13 @@ form input {
     border-radius: 7px;
     background-color: #fd7e14;
     padding: 0;
-
 }
 
 .basket i {
     font-size: 30px;
 }
 
-
-.discription_product_card {
+.description_product_card {
     font-size: 19px;
     text-indent: 60px;
 }
@@ -289,7 +297,6 @@ form input {
     text-shadow: 0.1em 0.1em 0.1em #212121;
 }
 
-
 form label {
     background-color: #1CAC78;
     color: white;
@@ -300,7 +307,6 @@ form label {
     padding-top: 25px;
     border-radius: 7px;
 }
-
 
 #id_quantity {
     background-color: #1CAC78;
@@ -322,7 +328,6 @@ form label {
     text-align: center;
 }
 
-
                                                 ### Order/create ###
 {}
 form.order-form {
@@ -330,7 +335,6 @@ form.order-form {
     width: 60%;
     margin:10px 0 10px 0;
 }
-
 
 #order-info {
     float: right;
@@ -341,13 +345,11 @@ form.order-form {
 	margin-top:10px;
 }
 
-
 form.order-form label {
     background-color: #fd7e14;
     height: 30px;
     padding: 1px;
 }
-
 
 form.order-form input {
     border-radius: 7px;
@@ -369,7 +371,6 @@ form.order-form input {
 .success h4, .success h5 {
     color: #8B4513;
 }
-
 
 .buy_now {
     background-color: #8B4513;
@@ -448,7 +449,7 @@ form.order-form input {
     text-decoration: none;
     color: white;
     border-radius: 7px;
-    padding: 5px;
+    padding: 5px 30px;
 }
 
 .link-change-profile {
@@ -456,7 +457,7 @@ form.order-form input {
     text-decoration: none;
     color: black;
     border-radius: 7px;
-    padding: 5px;
+    padding: 5px 30px;
 }
 
 .link-change-profile:hover {

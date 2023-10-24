@@ -24,7 +24,6 @@ def order_create(request):
                                          quantity=item['quantity'],
                                          total_price_product=item['price'] * item['quantity'] / 100,
                                          )
-            # очистка корзины
             cart.clear()
 
             return render(request, 'orders/created.html',
