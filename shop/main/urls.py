@@ -5,7 +5,7 @@ from .views import AdminsView
 app_name = 'main'
 
 urlpatterns = [
-    path('main', views.main, name='main'),
+    path('', views.main, name='main'),
     path('about-us', views.about, name='about'),
     path('search', views.search_results, name='search_results'),
     path('admin/', AdminsView.as_view(), name='admins'),
